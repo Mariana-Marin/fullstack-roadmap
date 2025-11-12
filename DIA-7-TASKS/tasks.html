@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Agregando tareas a una lista - Mariana Marin</title>
+    <style> 
+        .completada {
+            background-color: #ffe5e5;
+            text-decoration: line-through;
+        }
+
+        .activa {
+            background-color: #95eca8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Mis Pendientes del Día
+    </h2>
+
+    <ol id="listaTareas">
+        <li class="activa">Desayunar</li>
+        
+    </ol>
+
+    <input type="text" id="nuevaTarea" placeholder="Escribe aquí...">
+    <button id="botonAgregar">Agregar</button>
+
+    <script>
+        const listaPrincipal = document.getElementById('listaTareas')
+        const campoTexto = document.getElementById('nuevaTarea')
+        const boton = document.getElementById('botonAgregar')
+
+        let indiceActual = 0;
+
+        boton.addEventListener('click', agregarNuevaTarea);
+
+        function agregarNuevaTarea() {
+            const textoIngresado = campoTexto.value.trim();
+            
+            if (textoIngresado !== "") {
+                // Marcar la tarea actual como completada
+                const items = listaPrincipal.children;
+                let textoAnterior = items[indiceActual].textContent;
+                items[indiceActual].className = 'completada';
+                items[indiceActual].textContent = textoAnterior;
+
+                // Crear nueva tarea activa
+                const nuevoItem = document.createElement('li');
+                nuevoItem.className = 'activa';
+                nuevoItem.textContent = textoIngresado;
+                listaPrincipal.appendChild(nuevoItem);
+                
+                campoTexto.value = "";
+                indiceActual++;
+            } else {
+                alert('Oye!!!, necesitas escribir algo antes de agregarlo')
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
