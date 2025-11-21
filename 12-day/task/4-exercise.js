@@ -8,8 +8,8 @@ const person = {
 
 // 1. the person doesn't have a name, please add your first name and last name to the person
 
-// develop your code here
-
+person.firstName = "Mariana";
+person.lastName = "Marin"
 
 // end
 
@@ -18,8 +18,9 @@ console.log("last name:", person.lastName);
 
 // 2. nice! now we need that this person to be able to say Hello, create a method to say hello named "greet"
 
-// develop your code here
-
+person.greet = function () {
+    console.log("wWow¡ I can greet")
+}
 
 // end
 
@@ -36,8 +37,11 @@ const address = {
     country: ""
 }
 
-// develop your code here
+address.city = "Medellin";
+address.street = "Castilla";
+address.country = "Colombia"
 
+person.address = address;
 
 // end
 
@@ -68,7 +72,16 @@ const dogs = {
     }
 }
 
-// develop your code here
+person.dogs = dogs;
+
+person.listPets = function () {
+
+    const petNames = [];
+    for (let pet in dogs) {
+        petNames.push(pet);
+    }
+    console.log(petNames);
+}
 
 
 // end
@@ -87,8 +100,17 @@ const dogsGender = {
     carlota: "female",
 }
 
-// develop your code here
+for (key in person.dogs) {
+  console.log(key)
+  person.dogs[key].gender = dogsGender[key]
+}
 
+person.petInfo = function (pet) {
+
+  let keys = Object.keys(person.dogs[pet]);
+  console.log(`${pet} is ${person.dogs[pet].age} years old and is a ${person.dogs[pet].gender} dog`)
+
+}
 
 // end
 person.petInfo("ranchera")
