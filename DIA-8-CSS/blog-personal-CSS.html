@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog personal de Mariana Marin - Ingeniera civil apasionada por el desarrollo backend">
+    <meta name="author" content="Mariana Marin">
+    <title>Mi Blog Personal - Mariana Marin</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        .imagen-portada {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .imagen-sobre-mi {
+            max-width: 900px;
+            width: 100%;
+            display: block;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .seccion-desarrollo article {
+            background-color: #eeeeee;
+            border-left-color: #333333;
+        }
+
+        .ranking-ajedrez {
+            list-style: none;
+        }
+
+        .ranking-ajedrez li {
+            padding: 0.5rem 0;
+            color: #333333;
+        }
+
+        .imagen-desarrollo {
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+
+        .contenedor-desarrollo {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .contenedor-desarrollo img {
+            flex: 0 0 40%;
+            max-width: 300px;
+        }
+
+        .contenedor-desarrollo figure {
+            flex: 1;
+            margin: 0;
+        }
+
+
+        .contenedor-ajedrez {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        .contenedor-ajedrez img {
+            flex: 0 0 40%;
+            max-width: 300px;
+            opacity: 0.85;
+            filter: drop-shadow(0 0 15px rgba(0,0,0,0.15));
+            border-radius: 8px;
+        }
+
+        .contenedor-ajedrez figure {
+            flex: 1;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="../MEDIA/PORTADA.jpeg" alt="Mi Blog Personal - Mariana Marin" class="imagen-portada">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#areas-importantes">Áreas Importantes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+
+            <img src="../MEDIA/SOBREMI.png" alt="Foto de Mariana" class="imagen-sobre-mi">
+
+            <article>
+                <p><strong>¡Hola!</strong> Soy <strong>Mariana Marin</strong>, <em>Ingeniera civil</em></p>
+                <p>Antes dibujando planos y ahora <strong>ASCII art</strong> :´)</p>
+                <p>23 años aprendiendo sobre la vida, y contando...</p>
+            </article>
+        </section>
+
+        <hr class="separador">
+
+        <section id="areas-importantes">
+            <h2>Áreas Importantes</h2>
+
+            <article class="seccion-desarrollo">
+                <h3>Desarrollo</h3>
+                <p>"Me <strong>APASIONA</strong> el back-end."</p>
+
+                <div class="contenedor-desarrollo">
+                    <img src="../MEDIA/DESARROLLO.jpeg" alt="Desarrollo - Ajedrez y estrategia" class="imagen-desarrollo">
+
+                    <figure>
+                        <pre role="text" aria-label="ASCII HELLO WORLD">
+
+  ██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗ ██╗
+  ██║  ██║██╔════╝██║     ██║     ██╔═══██╗    ██║    ██║██╔═══██╗██╔══██╗██║     ██╔══██╗██║
+  ███████║█████╗  ██║     ██║     ██║   ██║    ██║ █╗ ██║██║   ██║██████╔╝██║     ██║  ██║██║
+  ██╔══██║██╔══╝  ██║     ██║     ██║   ██║    ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║╚═╝
+  ██║  ██║███████╗███████╗███████╗╚██████╔╝    ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝██╗
+  ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝ ╚═╝
+
+                        </pre>
+                        <figcaption>Texto con la frase "Hello WORLD!" - ilustrado usando caracteres de texto</figcaption>
+                    </figure>
+                </div>
+            </article>
+        </section>
+
+        <hr class="separador">
+
+        <section id="ajedrez">
+            <h3>Ajedrez</h3>
+
+            <p>"La partida más difícil de ganar es una partida ganada." <br>— Emanuel Lasker</p>
+
+            <div class="contenedor-ajedrez">
+                <img src="../MEDIA/AJEDREZ.jpeg" alt="Ajedrez - Estrategia y táctica" class="imagen-ajedrez">
+
+                <figure>
+                    <pre role="text" aria-label="ASCII CHESS">
+
+  ░█████╗░██╗░░██╗███████╗░██████╗░██████╗  
+  ██╔══██╗██║░░██║██╔════╝██╔════╝██╔════╝
+  ██║░░╚═╝███████║█████╗░░╚█████╗░╚█████╗░
+  ██║░░██╗██╔══██║██╔══╝░░░╚═══██╗░╚═══██╗
+  ╚█████╔╝██║░░██║███████╗██████╔╝██████╔╝
+  ░╚════╝░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
+
+                    </pre>
+                    <figcaption>Texto con la palabra "CHESS" - ilustrado usando caracteres de texto</figcaption>
+                </figure>
+            </div>
+
+            <p>Soy <em>Gambito de Dama</em> de <mark>TEMU</mark>.</p>
+            <p>Mi plataforma favorita para jugar es: <a href="https://www.chess.com" target="_blank">Chess.com</a>.</p>
+
+            <article>
+                <h4>Top 3 <strong>MEJORES</strong> jugadores de la historia:</h4>
+                <ul class="ranking-ajedrez">
+                    <li>1<sup>er</sup> lugar: <strong>Judith Polgar</strong></li>
+                    <li>2<sup>do</sup> lugar: <strong>Garry Kasparov</strong></li>
+                    <li>3<sup>er</sup> lugar: <strong>Magnus Carlsen</strong></li>
+                </ul>
+            </article>
+
+        </section>
+
+        <hr class="separador">
+
+        <section id="familia">
+            <h3>Familia</h3>
+
+            <p>Mi hija es: <em>Mi mayor apoyo y motivación.</em></p>
+
+            <figure>
+                <pre role="text" aria-label="ASCII GABRIELA HIJA">
+
+     ██████╗  █████╗ ██████╗ ██████╗ ██╗███████╗██╗      █████╗ 
+    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║██╔════╝██║     ██╔══██╗
+    ██║  ███╗███████║██████╔╝██████╔╝██║█████╗  ██║     ███████║
+    ██║   ██║██╔══██║██╔══██╗██╔══██╗██║██╔══╝  ██║     ██╔══██║
+    ╚██████╔╝██║  ██║██████╔╝██║  ██║██║███████╗███████╗██║  ██║
+     ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚═╝  ╚═╝
+                </pre>
+                <figcaption>Texto con la palabra "GABRIELA" - ilustrado usando caracteres de texto</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        <p id="contacto">©2025 Mariana | <a href="mailto:marianamarinvanegas2014@gmail.com">Email</a></p>
+    </footer>
+    
+</body>
+</html>
