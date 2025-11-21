@@ -6,15 +6,3 @@ let rectangle = {
   height: 10,
   width: 5
 };
-
-
-let user = { name: "John", age: 30 };
-
-console.log( "age" in user );    // true -> La propiedad "age" existe.
-console.log( "blabla" in user ); // false -> La propiedad "blabla" no existe.
-
-for (let key in user) {
-    console.log("Clave:", key); 
-    console.log("Valor:", user[key]); 
-}
-
