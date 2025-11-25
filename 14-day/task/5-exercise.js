@@ -3,17 +3,17 @@
  * The string length must be broader than or equal to 1.
  */
 
-function swapFirstAndLastChar(str) {
+function swapFirstAndLastLetter (str) {
   if (str.length < 1) {
     return "String length must be broader than or equal to 1";
   }
 
-  const firstChar = str[0];
-  const lastChar = str[str.length - 1];
+  const firstLetter = str[0];
+  const lastLetter = str[str.length - 1];
   const middleStr = str.slice(1, str.length - 1);
-  return lastChar + middleStr + firstChar;
+  return lastLetter + middleStr + firstLetter;
 }
 
-console.log(swapFirstAndLastChar("Mariana"));
-console.log(swapFirstAndLastChar("A"));
-console.log(swapFirstAndLastChar(""));
+console.log(swapFirstAndLastLetter("Mariana"));
+console.log(swapFirstAndLastLetter("A"));
+console.log(swapFirstAndLastLetter(""));
