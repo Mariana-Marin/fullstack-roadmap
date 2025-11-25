@@ -43,3 +43,5 @@ console.log(string1); // this should print "Playing with JS strings Playing"
 // ******************* DONT MODIFY - START ******************* 
 console.log(firstWord); // this should print "PlayingPlayingPlaying"
 // ******************* DONT MODIFY - END ******************* 
+
+console.log([]/false)
