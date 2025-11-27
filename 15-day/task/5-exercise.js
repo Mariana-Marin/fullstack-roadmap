@@ -12,16 +12,13 @@ setInterval() necesita 2 parámetros:
 
 let str = "w3resource";
 
-function rotateString (){
+function rotateString() {
+  let lastCharacter = str[str.length - 1];
+  let restOfString = str.slice(0, -1);
 
-    let lastCharacter = str[str.length -1];
-    let restOfString = str.slice(0, -1);
+  str = lastCharacter + restOfString;
 
-    str = lastCharacter + restOfString;
-
-    console.log (str);
+  console.log(str);
 }
 
 setInterval(rotateString, 1000);
-
-
