@@ -10,7 +10,9 @@ Math.trunc(0.847362) → elimina decimales */
 let secretNumber = Math.trunc(Math.random() * 10) + 1;
 console.log(secretNumber);
 
-// Supongamos que hay un Prompt: "input a guess number"
+/* Descomentar para usar con prompt:
+const userGuess = Number(prompt("Guess a number between 1 and 10: "));
+*/
 let userNumber = 4;
 
 userNumber === secretNumber
