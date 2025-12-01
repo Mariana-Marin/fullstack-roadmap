@@ -2,14 +2,12 @@
 
 // Write a JavaScript program to find the closest value to 100 from two numerical values.
 
-function findClosestValueTo100(numOne, numTwo) {
-  const differenceOne = Math.abs(100 - numOne);
-  const differenceTwo = Math.abs(100 - numTwo);
+function findClosestValueTo100(a, b) {
 
-  if (differenceOne > differenceTwo) {
-    return numTwo;
+  if ( Math.abs(100 - a) > Math.abs(100 - b) ) {
+    return b;
   } else {
-    return numOne;
+    return a;
   }
 }
 
