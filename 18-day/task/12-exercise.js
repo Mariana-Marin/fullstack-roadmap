@@ -1,3 +1,3 @@
-// Ejercicio 12 - Día 18
-
-// ...escribe tu solución aquí...
+// 57. Create String of Specified Copies
+//
+// Write a JavaScript program to create one string of specified copies (positive numbers) of a given string.

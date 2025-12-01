@@ -1,3 +1,3 @@
-// Ejercicio 7 - Día 18
-
-// ...escribe tu solución aquí...
+// 52. Sort Letters Alphabetically in String
+//
+// Write a JavaScript program to convert letters of a given string alphabetically.
