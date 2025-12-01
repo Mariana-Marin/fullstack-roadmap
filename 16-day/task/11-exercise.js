@@ -13,6 +13,6 @@ function addLast3CharsToFrontAndBack(str) {
   return last3Chars + str + last3Chars;
 }
 
+console.log(addLast3CharsToFrontAndBack("hi"));
 console.log(addLast3CharsToFrontAndBack("Mariana"));
 console.log(addLast3CharsToFrontAndBack("abc"));
-console.log(addLast3CharsToFrontAndBack("hi"));

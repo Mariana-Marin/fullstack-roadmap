@@ -2,3 +2,13 @@
 
 // Write a JavaScript program to check whether a string starts with 'Java' if 
 // it does not otherwise.  
+
+function startsWithJava(str) {
+
+    firstFourLetters = str.toLowerCase().slice(0, 4);
+    return firstFourLetters === "java";
+    //return str.startsWith("Java");
+
+}
+console.log(startsWithJava("JavaScript"));
+console.log(startsWithJava("Mariana"));
