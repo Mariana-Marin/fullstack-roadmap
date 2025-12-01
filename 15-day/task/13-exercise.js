@@ -10,6 +10,6 @@ function createVariableWithNameDefinedForUser(nameDefinedForUser, value) {
 }
 
 createVariableWithNameDefinedForUser(nameDefinedForUser, valueDefinedForUser);
-console.log(window.name); // "Mariana"
+console.log(window.name);
 
 

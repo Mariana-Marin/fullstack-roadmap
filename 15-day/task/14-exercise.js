@@ -17,6 +17,9 @@ function getFileExtension(filename) {
   return hasDot ? extension : "invalid extension";
 }
 
-console.log(getFileExtension("documento.txt"));
-console.log(getFileExtension("noextension"));
 console.log(getFileExtension("foto.jpeg"));
+
+console.log(getFileExtension("documento.txt"));
+
+console.log(getFileExtension("noextension"));
+
