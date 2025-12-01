@@ -4,7 +4,7 @@
 
 function LargestOfThreeIntegers(a, b, c) {
   // return Math.max(a, b, c);
-  
+
   if (a > b && a > c) {
     return a;
   } else if (b > a && b > c) {
@@ -15,3 +15,4 @@ function LargestOfThreeIntegers(a, b, c) {
 }
 
 console.log(LargestOfThreeIntegers(1, 2, 3));
+console.log(LargestOfThreeIntegers(4, 6, 5));
