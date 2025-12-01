@@ -12,6 +12,7 @@ La función debe retornar:
 - Quién debe sacar en este momento
 - Si el juego ha terminado y quién ganó*/
 
+//Dividir la suma de los puntos entre 4 y ver el residuo.
 //Si el residuo es 0 o 1: Saca P1.
 //Si el residuo es 2 o 3: Saca P2.
 
