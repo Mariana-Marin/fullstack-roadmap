@@ -7,7 +7,7 @@ function startsWithJava(str) {
 
     firstFourLetters = str.toLowerCase().slice(0, 4);
     return firstFourLetters === "java";
-    //return str.startsWith("Java");
+    //return str.startsWith("java");
 
 }
 console.log(startsWithJava("JavaScript"));
