@@ -23,12 +23,12 @@ function pingPongGame(player1, player2, score1, score2) {
     } else {
       return `${player2} is the winner!`;
     }
-  }
-
-  if ((score1 + score2) % 4 < 2) {
-    return `It's ${player1}'s turn to serve`;
   } else {
-    return `It's ${player2}'s turn to serve`;
+    if ((score1 + score2) % 4 < 2) {
+      return `It's ${player1}'s turn to serve`;
+    } else {
+      return `It's ${player2}'s turn to serve`;
+    }
   }
 }
 
