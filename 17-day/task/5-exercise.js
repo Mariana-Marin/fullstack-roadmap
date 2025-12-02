@@ -4,3 +4,10 @@
 // 2nd and 4th positions in a given string.  
 
 
+function checkCharacter(str, char) {
+    let subStr = str.slice(2, 5);
+    return subStr.includes(char);
+}
+
+console.log(checkCharacter("Mariana", "r"));
+console.log(checkCharacter("JavaScript", "c"));

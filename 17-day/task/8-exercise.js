@@ -7,3 +7,13 @@
 // If the examination is labeled as "Final-exam," the student will receive an A+ grade only if their total marks are 90 or greater. Assume that final examination means we pass 'true' as second parameter otherwise blank.
 // If the student achieves an A+ grade, the program should return 'true'; otherwise, it should return 'false'.
 
+function evaluateGrade(totalMarks, isFinalExam = false) {
+  if (isFinalExam) {
+    return totalMarks >= 90;
+  } else {
+    return totalMarks >= 89 && totalMarks <= 100;
+  }
+}
+
+console.log(evaluateGrade(92, true)); 
+console.log(evaluateGrade(88));  
