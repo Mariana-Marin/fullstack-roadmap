@@ -18,3 +18,26 @@ for (let i = 1; i <= 100; i++) {
         console.log(i);
     }
 }
+
+
+function stringToRot13 (str) {
+
+    let strRot13 = []
+    let abc = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    let arrayAbc = abc.split("")
+
+    for (let index = 0; index < str.length; index++) {
+
+    let indexLetter = arrayAbc.indexOf(str[index])
+    let indexRot13 = (indexLetter + 13)
+    let letterRot13 = arrayAbc[indexRot13]
+
+    strRot13.push(letterRot13)
+    }
+
+    console.log (strRot13.join(""))
+    
+}
+
+stringToRot13("hello");
+stringToRot13("uryyb");
