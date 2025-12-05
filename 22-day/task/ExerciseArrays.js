@@ -13,13 +13,6 @@ output: [1, 2, 3]
 input: [1, 2, [2], 5, 6, [2]]
 output: [4, 8, 20, 24] */
 
-// Multiply by Nested Elements
-//
-// Write a program that takes an array containing integers and potentially nested arrays of integers.
-// The program should calculate a 'global multiplier' by multiplying all integers found inside any nested arrays.
-// Then, it should return a new array containing only the top-level integers from the original array, each multiplied by this global multiplier.
-// If there are no nested arrays, the multiplier is 1.
-
 function multiplyFatherArray(array) {
   let fatherArray = [];
   let childArray = [];
@@ -48,4 +41,11 @@ function multiplyFatherArray(array) {
   return finalArray;
 }
 
+
+console.log(multiplyFatherArray([2, 3, [2], 4]));
+console.log(multiplyFatherArray([[3], 1, 5, 4]));
 console.log(multiplyFatherArray([5, 2, 1, 4, 3, [2, 3], 2]));
+console.log(multiplyFatherArray([1, 2, 3]));
+console.log(multiplyFatherArray([1, 2, [2], 5, 6, [2]]));
+
+
