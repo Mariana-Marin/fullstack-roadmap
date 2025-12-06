@@ -22,6 +22,7 @@ function multiplyFatherArray(array) {
   for (let index = 0; index < array.length; index++) {
     if (typeof array[index] === "number") {
       fatherArray.push(array[index]);
+      
     } else {
       childArray.push(array[index]);
     }
