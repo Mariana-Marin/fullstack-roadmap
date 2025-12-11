@@ -13,24 +13,24 @@ there is only 1 animal with the color "Blue"
 there are 2 animals with the color "Red"*/
 
 const animals = [
-  { name: 'Dog', color: 'White, Brown' },
-  { name: 'Lion', color: 'Brown' },
-  { name: 'Tiger', color: 'Orange, Brown' },
-  { name: 'Tiger2', color: 'Orange, Brown' },
-  { name: 'Cat', color: 'Black' },
-  { name: 'Parrot', color: 'Green, Red' },
-  { name: 'Fish', color: 'Blue' },
-  { name: 'Hamster', color: 'Golden, Brown' },
-  { name: 'Rabbit', color: 'White' },
-  { name: 'Turtle', color: 'Green, Brown' },
-  { name: 'Horse', color: 'Black, White' },
-  { name: 'Pig', color: 'Pink' },
-  { name: 'Cow', color: 'Black, White' },
-  { name: 'Sheep', color: 'White' },
-  { name: 'Goat', color: 'Brown, White' },
-  { name: 'Duck', color: 'Yellow, Brown' },
-  { name: 'Chicken', color: 'White, Red' },
-  { name: 'Frog', color: 'Green' },
+  { name: "Dog", color: "White, Brown" },
+  { name: "Lion", color: "Brown" },
+  { name: "Tiger", color: "Orange, Brown" },
+  { name: "Tiger2", color: "Orange, Brown" },
+  { name: "Cat", color: "Black" },
+  { name: "Parrot", color: "Green, Red" },
+  { name: "Fish", color: "Blue" },
+  { name: "Hamster", color: "Golden, Brown" },
+  { name: "Rabbit", color: "White" },
+  { name: "Turtle", color: "Green, Brown" },
+  { name: "Horse", color: "Black, White" },
+  { name: "Pig", color: "Pink" },
+  { name: "Cow", color: "Black, White" },
+  { name: "Sheep", color: "White" },
+  { name: "Goat", color: "Brown, White" },
+  { name: "Duck", color: "Yellow, Brown" },
+  { name: "Chicken", color: "White, Red" },
+  { name: "Frog", color: "Green" },
 ];
 
 function getAnimalsByColor(searchColor) {
@@ -45,5 +45,6 @@ function getAnimalsByColor(searchColor) {
   return count;
 }
 
-console.log(getAnimalsByColor("Brown"));  
-console.log(getAnimalsByColor("Red"));    
+console.log(getAnimalsByColor("Brown"));
+console.log(getAnimalsByColor("Red"));
+console.log(getAnimalsByColor("Blue"));
