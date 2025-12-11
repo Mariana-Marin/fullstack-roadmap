@@ -485,8 +485,15 @@ At the end, prints:
 "Global average rating: X"
 Hint: Nested loops (books → ratings) Use of multiple accumulators (per book and global).*/
 
+
+function calculateAverageRatingBooks (bookCollection) {
+
+
+  
+}
+
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-4 Using the bookCollection array, write a function that:
+3 Using the bookCollection array, write a function that:
 Creates an object that stores the total number of pages per genre.
 Each book can have multiple genres (the genre array), and its pages value should be added to each of its genres.
 The function must return an object like:

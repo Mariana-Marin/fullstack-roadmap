@@ -468,19 +468,17 @@ the function should receive only one parameter that is the minimum chapters that
 /*2. create a function that returns an array of the books of a specific genre, the function should be named "getBooksByGenre", 
 the function should receive only one parameter (the genre that the books should have)*/
 
-// function getBooksByGenre(genre) {
-//   const arrayBooks = [];
-//   for (let i = 0; i < bookCollection.length; i++) {
-//     for (let j = 0; j < bookCollection[i].genre.length; j++) {
-//       if (bookCollection[i].genre[j] === genre) {
-//         arrayBooks.push(bookCollection[i]);
-//       }
-//     }
-//   }
-//   return arrayBooks;
-// }
+function getBooksByGenre(genre) {
+  const arrayBooks = [];
+  for (let i = 0; i < bookCollection.length; i++) {
+      if (bookCollection[i].genre.includes(genre)) {
+        arrayBooks.push(bookCollection[i]);
+      }
+    }
+  return arrayBooks;
+}
 
-//console.log(getBooksByGenre("Adventure"));
+console.log(getBooksByGenre("Adventure"));
 
 /*1. create a function that returns an array of books based on amazon rating, the function should be named "getBooksByAmazonRating", 
 the function should receive only one number parameter that is the minimum amazon rating that the book should have.*/
