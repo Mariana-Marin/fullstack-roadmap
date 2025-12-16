@@ -456,30 +456,86 @@ const bookCollection = [
 
 // 1. Exercise: Print Book Summaries
 // Function Name: logBookSummaries
-// Instruction: Use forEach to iterate through the bookCollection. For each book, log a string to the console in this format: "Title by Author (Year)".
+// Instruction: Use forEach to iterate through the bookCollection. For each book,
+// log a string to the console in this format: "Title by Author (Year)".
 // Example Output: "Dune by Frank Herbert (1965)"
-// Hint: Use template literals \`\${}\` to format the string.
+// Hint: Use template literals \`\${}\``\${}\` to format the string.
+
+function logBooksSummaries(collection) {
+  collection.forEach((book) => {
+    console.log(`${book.title} by ${book.author} (${book.publicationYear})`);
+  });
+}
+
+//logBooksSummaries(bookCollection);
 
 // 2. Exercise: Count Available Books
 // Function Name: countAvailableBooks
-// Instruction: Create a function that returns the total number of books that are currently available (isAvailable: true).
+// Instruction: Create a function that returns the total number of books that are currently
+// available (isAvailable: true).
 // Use forEach to iterate and increment a counter.
 // Example Output: 18
 // Hint: Initialize a counter variable outside the loop.
 
+function countAvailableBooks(collection) {
+  let counter = 0;
+
+  collection.forEach((book) => {
+    if (book.isAvailable) {
+      counter++;
+    }
+  });
+
+  return counter;
+}
+
+//console.log(countAvailableBooks(bookCollection));
+
 // 3. Exercise: Filter Sci-Fi Books
 // Function Name: getSciFiBooks
-// Instruction: Create a function that returns an array of titles for books that include the genre "Science Fiction".
+// Instruction: Create a function that returns an array of titles for books that include
+// the genre "Science Fiction".
 // Use forEach to push matching titles into a new array.
 // Example Output: ["Dune", "1984", "Fahrenheit 451", ...]
 // Hint: Check if book.genre.includes("Science Fiction").
+
+function getSciFiBooks(collection) {
+  const arrBooksSciFi = [];
+
+  collection.forEach((book) => {
+    if (book.genre.includes("Science Fiction")) {
+      arrBooksSciFi.push(book.title);
+    }
+  });
+
+  return arrBooksSciFi;
+}
+
+//console.log(getSciFiBooks(bookCollection));
 
 // 4. Exercise: Find Highest Rated Book
 // Function Name: findHighestRatedBook
 // Instruction: Create a function that finds the book with the highest rating from "Goodreads".
 // Use forEach to compare each book's rating against a current maximum.
 // Example Output: "The Name of the Wind" (assuming it has the highest score)
-// Hint: Initialize a variable for the max score and one for the best book. Update them if the current book's score is higher.
+// Hint: Initialize a variable for the max score and one for the best book. Update them if the current
+// book's score is higher.
+
+function findHighestRatedBook(collection) {
+  let maxScore = 0;
+  let bestBook = "";
+
+  collection.forEach((book) => {
+    if (book.ratings[0].score > maxScore) {
+      maxScore = book.ratings[0].score;
+      bestBook = book.title;
+    }
+  });
+
+  return bestBook;
+}
+
+// console.log(findHighestRatedBook(bookCollection));
 
 // 5. Exercise: Keyword Aggregator
 // Function Name: collectAllKeywords
@@ -488,32 +544,128 @@ const bookCollection = [
 // Example Output: ["desert planet", "ecology", "politics", "religion", "giant worms", "regency england", ...]
 // Hint: You can use another forEach inside the main forEach to loop through book.keywords.
 
+function collectAllKeywords(collection) {
+  const allKeywords = [];
+
+  collection.forEach((book) => {
+    book.keywords.forEach((keyword) => {
+      if (!allKeywords.includes(keyword)) {
+        allKeywords.push(keyword);
+      }
+    });
+  });
+
+  return allKeywords;
+}
+
+//console.log(collectAllKeywords(bookCollection));
+
 // 6. Exercise: Publisher Frequency
 // Function Name: countBooksByPublisher
-// Instruction: Create a function that returns an object where keys are publisher names and values are the count of books they published. Use forEach to iterate and update the count in the object.
+// Instruction: Create a function that returns an object where keys are publisher names and values are the count of books
+//  they published. Use forEach to iterate and update the count in the object.
 // Example Output: { "Chilton Books": 1, "T. Egerton": 1, "George Allen & Unwin": 1, ... }
 // Hint: Check if the publisher exists in your result object. If yes, increment; if no, set to 1.
 
+function countBooksByPublisher(collection) {
+  const publishers = {};
+
+  collection.forEach((book) => {
+    if (publishers[book.publisher.name]) {
+      publishers[book.publisher.name] += 1;
+    } else {
+      publishers[book.publisher.name] = 1;
+    }
+  });
+
+  return publishers;
+}
+
+//console.log(countBooksByPublisher(bookCollection));
+
 // 7. Exercise: Mark Reading Status
 // Function Name: markReadingStatus
-// Instruction: Modify the original bookCollection. Use forEach to add a new property `readingStatus` to each book. If pages > 500, set it to "Long Read", otherwise "Moderate Read".
+// Instruction: Modify the original bookCollection. Use forEach to add a new property `readingStatus` to each book.
+//  If pages > 500, set it to "Long Read", otherwise "Moderate Read".
 // Example Output: console.log(bookCollection[0].readingStatus) -> "Moderate Read"
 // Hint: You can modify the `book` object directly inside the loop (e.g., `book.readingStatus = ...`).
 
+function markReadingStatus(collection) {
+  collection.forEach((book) => {
+    if (book.pages > 500) {
+      book.readingStatus = "Long Read";
+    } else {
+      book.readingStatus = "Moderate Read";
+    }
+    console.log(`${book.title} : ${book.readingStatus}`);
+  });
+}
+
+//markReadingStatus(bookCollection);
+
 // 8. Exercise: Print Chapter Info
 // Function Name: logChapterCounts
-// Instruction: Use forEach to iterate through the collection. If a book has chapters > 0, log "Title: X chapters". If it has 0 chapters, log "Title: Special Collection".
+// Instruction: Use forEach to iterate through the collection. If a book has chapters > 0, log "Title: X chapters".
+//  If it has 0 chapters, log "Title: Special Collection".
 // Example Output: "Dune: 22 chapters", "Where the Sidewalk Ends: Special Collection"
 // Hint: Use an if/else statement inside the forEach loop.
 
+function logChapterCounts(collection) {
+  collection.forEach((book) => {
+    if (book.chapters > 0) {
+      console.log(`${book.title} : ${book.chapters} chapters`);
+    } else {
+      console.log(`${book.title} : Special Collection`);
+    }
+  });
+}
+
+//logChapterCounts(bookCollection);
+
 // 9. Exercise: Author Bibliography
 // Function Name: organizeBooksByAuthor
-// Instruction: Create a function that returns an object where keys are author names and values are arrays of their book titles. Use forEach to build this object.
+// Instruction: Create a function that returns an object where keys are author names and values are arrays
+// of their book titles. Use forEach to build this object.
 // Example Output: { "Frank Herbert": ["Dune"], "Jane Austen": ["Pride and Prejudice"], ... }
-// Hint: Initialize an empty object. For each book, check if `result[book.author]` exists. If not, create it as an empty array `[]`. Then push the title.
+// Hint: Initialize an empty object. For each book, check if `result[book.author]` exists. If not,
+// create it as an empty array `[]`. Then push the title.
+
+function organizeBooksByAuthor(collection) {
+  const authors = {};
+
+  collection.forEach((book) => {
+    if (authors[book.author]) {
+      authors[book.author].push(book.title);
+    } else {
+      authors[book.author] = [];
+      authors[book.author].push(book.title);
+    }
+  });
+  return authors;
+}
+
+//console.log(organizeBooksByAuthor(bookCollection));
 
 // 10. Exercise: High Quality Books
 // Function Name: getHighRatedBooks
-// Instruction: Create a function that returns an array of titles of books that have at least one rating score greater than 4.8. You will need to check the `ratings` array of each book.
+// Instruction: Create a function that returns an array of titles of books that have at least one
+//  rating score greater than 4.8. You will need to check the `ratings` array of each book.
 // Example Output: ["The Name of the Wind", "Where the Sidewalk Ends", ...]
 // Hint: Inside the main forEach, you might need another loop (or .find/.some) to check the `ratings` array for any score > 4.8.
+
+function getHighRatedBooks(collection) {
+  const arrBooksHighRated = [];
+
+  collection.forEach((book) => {
+
+    const isHighRating = book.ratings.some((rating) => rating.score > 4.8);
+
+    if (isHighRating) {
+      arrBooksHighRated.push(book.title);
+    }
+  });
+
+  return arrBooksHighRated;
+}
+
+// console.log(getHighRatedBooks(bookCollection));

@@ -460,11 +460,27 @@ const bookCollection = [
 // Example Output: [ { title: "Dune", pages: 412, ... }, { title: "Moby Dick", pages: 635, ... }, ... ]
 // Hint: Return `book.pages > 300` inside the callback function.
 
+function filterLongBooks(collection) {
+  return collection.filter((book) => {
+    return book.pages > 300;
+  });
+}
+
+//console.log(filterLongBooks(bookCollection));
+
 // 2. Exercise: Filter Available Books
 // Function Name: filterAvailableBooks
 // Instruction: Use .filter() to create an array of books that are currently available (`isAvailable` is true).
 // Example Output: [ { title: "Dune", isAvailable: true, ... }, ... ]
 // Hint: Return `book.isAvailable === true` (or just `book.isAvailable`).
+
+function filterAvailableBooks(collection) {
+  return collection.filter((book) => {
+    return book.isAvailable;
+  });
+}
+
+//console.log(filterAvailableBooks(bookCollection));
 
 // 3. Exercise: Filter by Genre (Fantasy)
 // Function Name: filterFantasyBooks
@@ -472,11 +488,27 @@ const bookCollection = [
 // Example Output: [ { title: "Harry Potter", genre: ["Fantasy", ...], ... }, ... ]
 // Hint: Use the .includes() method on the genre array: `book.genre.includes("Fantasy")`.
 
+function filterFantasyBooks(collection) {
+  return collection.filter((book) => {
+    return book.genre.includes("Fantasy");
+  });
+}
+
+//console.log(filterFantasyBooks(bookCollection));
+
 // 4. Exercise: Filter by Author
 // Function Name: filterByAuthor
 // Instruction: Use .filter() to create an array of books written by "Jane Austen".
 // Example Output: [ { title: "Pride and Prejudice", author: "Jane Austen", ... }, ... ]
 // Hint: Check if `book.author === "Jane Austen"`.
+
+function filterByAuthor(collection) {
+  return collection.filter((book) => {
+    return book.author === "Jane Austen";
+  });
+}
+
+//console.log(filterByAuthor(bookCollection));
 
 // 5. Exercise: Filter Recent Books
 // Function Name: filterRecentBooks
@@ -484,18 +516,47 @@ const bookCollection = [
 // Example Output: [ { title: "The Name of the Wind", publicationYear: 2007, ... }, ... ]
 // Hint: Return `book.publicationYear > 2000`.
 
+function filterRecentBooks(collection) {
+  return collection.filter((book) => {
+    return book.publicationYear > 2000;
+  });
+}
+
+//console.log(filterRecentBooks(bookCollection));
+
 // 6. Exercise: Filter by Keyword
 // Function Name: filterBooksByKeyword
 // Instruction: Use .filter() to create an array of books that have "magic" in their `keywords` list.
 // Example Output: [ { title: "Harry Potter", ... }, { title: "The Name of the Wind", ... } ]
 // Hint: Use `book.keywords.includes("magic")`.
 
+function filterBooksByKeyword(collection) {
+  return collection.filter((book) => {
+    return book.keywords.includes("magic");
+  });
+}
+
+// console.log(filterBooksByKeyword(bookCollection));
+
 // 7. Exercise: Filter High Rated Books (Goodreads)
 // Function Name: filterHighRatedBooks
 // Instruction: Use .filter() to create an array of books that have a "Goodreads" rating score greater than 4.3.
-// Note: `ratings` is an array of objects. You need to find the object where `source` is "Goodreads" and check its `score`.
+// Note: `ratings` is an array of objects. You need to find the object where `source` is "Goodreads"
+// and check its `score`.
 // Example Output: [ { title: "The Name of the Wind", ... }, ... ]
 // Hint: You can use `.find()` inside the filter: `book.ratings.find(r => r.source === "Goodreads").score > 4.3`.
+
+function filterHighRatedBooks(collection) {
+  return collection.filter((book) => {
+    return (
+      book.ratings.find((r) => {
+        return r.source === "Goodreads";
+      }).score > 4.3
+    );
+  });
+}
+
+//console.log(filterHighRatedBooks(bookCollection));
 
 // 8. Exercise: Filter by Publisher Location
 // Function Name: filterNYBooks
@@ -503,15 +564,39 @@ const bookCollection = [
 // Example Output: [ { title: "The Great Gatsby", publisher: { location: "New York" }, ... }, ... ]
 // Hint: Access the nested property: `book.publisher.location === "New York"`.
 
+function filterNYBooks(collection) {
+  return collection.filter((book) => {
+    return book.publisher.location === "New York";
+  });
+}
+
+// console.log(filterNYBooks(bookCollection));
+
 // 9. Exercise: Filter Short and Available
 // Function Name: filterShortAndAvailable
 // Instruction: Use .filter() to create an array of books that have fewer than 250 pages AND are currently available.
 // Example Output: [ { title: "The Great Gatsby", pages: 180, isAvailable: true, ... } ]
 // Hint: Combine conditions with `&&`: `book.pages < 250 && book.isAvailable`.
 
+function filterShortAndAvailable(collection) {
+  return collection.filter((book) => {
+    return book.pages < 250 && book.isAvailable;
+  });
+}
+
+// console.log(filterShortAndAvailable(bookCollection));
+
 // 10. Exercise: Filter Classics or Long Books
 // Function Name: filterClassicsOrLong
-// Instruction: Use .filter() to create an array of books that either have the genre "Classic" OR have more than 600 pages.
+// Instruction: Use .filter() to create an array of books that either have the genre "Classic"
+// OR have more than 600 pages.
 // Example Output: [ { title: "Pride and Prejudice", genre: ["Classic"], ... }, { title: "Moby Dick", pages: 635, ... } ]
 // Hint: Combine conditions with `||`: `book.genre.includes("Classic") || book.pages > 600`.
 
+function filterClassicsOrLong(collection) {
+  return collection.filter((book) => {
+    return book.genre.includes("Classic") || book.pages > 600;
+  });
+}
+
+//console.log(filterClassicsOrLong(bookCollection));

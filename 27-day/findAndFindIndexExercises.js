@@ -460,11 +460,27 @@ const bookCollection = [
 // Example Output: { title: "1984", ... }
 // Hint: `book.isbn === "..."`
 
+function findBookByISBN(collection, ISBN) {
+  return collection.find((book) => {
+    return book.isbn === ISBN;
+  });
+}
+
+//console.log(findBookByISBN(bookCollection, "978-0451524935"));
+
 // 2. Exercise: Find by Title
 // Function Name: findBookByTitle
 // Instruction: Use .find() to return the book object with the title "The Great Gatsby".
 // Example Output: { title: "The Great Gatsby", ... }
 // Hint: `book.title === "The Great Gatsby"`
+
+function findBookByTitle(collection, title) {
+  return collection.find((book) => {
+    return book.title === title;
+  });
+}
+
+//console.log(findBookByTitle(bookCollection, "The Great Gatsby"));
 
 // 3. Exercise: Find First Post-2010 Book
 // Function Name: findRecentBook
@@ -472,11 +488,27 @@ const bookCollection = [
 // Example Output: { title: "Sapiens: A Brief History of Humankind", ... }
 // Hint: `book.publicationYear > 2010`
 
+function findRecentBook(collection) {
+  return collection.find((book) => {
+    return book.publicationYear > 2010;
+  });
+}
+
+//console.log(findRecentBook(bookCollection));
+
 // 4. Exercise: Find Index of "1984"
 // Function Name: findIndexOf1984
 // Instruction: Use .findIndex() to return the index of the book with the title "1984".
 // Example Output: 2 (or whatever the index is)
 // Hint: `book.title === "1984"`
+
+function findIndexOf1984(collection, title) {
+  return collection.findIndex((book) => {
+    return book.title === title;
+  });
+}
+
+//console.log(findIndexOf1984(bookCollection, "1984"));
 
 // 5. Exercise: Find Index of Long Book
 // Function Name: findIndexOfLongBook
@@ -484,11 +516,27 @@ const bookCollection = [
 // Example Output: 6 (Moby Dick)
 // Hint: `book.pages > 500`
 
+function findIndexOfLongBook(collection) {
+  return collection.findIndex((book) => {
+    return book.pages > 500;
+  });
+}
+
+//console.log(findIndexOfLongBook(bookCollection));
+
 // 6. Exercise: Find Book by Keyword
 // Function Name: findBookWithMagic
 // Instruction: Use .find() to return the first book that includes the keyword "magic" in its keywords array.
 // Example Output: { title: "The Name of the Wind", ... }
 // Hint: `book.keywords.includes("magic")`
+
+function findBookWhithMagic(collection) {
+  return collection.find((book) => {
+    return book.keywords.includes("magic");
+  });
+}
+
+// console.log(findBookWhithMagic(bookCollection));
 
 // 7. Exercise: Find Index by Publisher
 // Function Name: findIndexByPublisher
@@ -496,11 +544,27 @@ const bookCollection = [
 // Example Output: 12 (Where the Sidewalk Ends)
 // Hint: `book.publisher.name === "HarperCollins"`
 
+function findIndexByPublisher(collection, publisher) {
+  return collection.findIndex((book) => {
+    return book.publisher.name === publisher;
+  });
+}
+
+//console.log(findIndexByPublisher(bookCollection, "HarperCollins"));
+
 // 8. Exercise: Find Highly Rated Book
 // Function Name: findHighRatedBook
 // Instruction: Use .find() to return the first book that has a "Goodreads" score greater than 4.5.
 // Example Output: { title: "The Name of the Wind", ... }
 // Hint: You might need `.find()` inside the callback too: `book.ratings.find(r => r.source === "Goodreads").score > 4.5`
+
+function findHighRatedBook(books) {
+  return books.find((book) => {
+    return book.ratings.find((r) => r.source === "Goodreads").score > 4.5;
+  });
+}
+
+//console.log(findHighRatedBook(bookCollection));
 
 // 9. Exercise: Find Index of Unavailable Book
 // Function Name: findIndexOfUnavailable
@@ -508,8 +572,24 @@ const bookCollection = [
 // Example Output: 1 (Pride and Prejudice)
 // Hint: `book.isAvailable === false`
 
+function findIndexOfUnavailable(books) {
+  return books.findIndex((book) => {
+    return book.isAvailable === false;
+  });
+}
+
+//console.log(findIndexOfUnavailable(bookCollection));
+
 // 10. Exercise: Find Book with Few Chapters
 // Function Name: findShortBook
 // Instruction: Use .find() to return the first book that has fewer than 5 chapters.
 // Example Output: { title: "The Alchemist", ... }
 // Hint: `book.chapters < 5`
+
+function findShortBook(books) {
+  return books.find((book) => {
+    return book.chapters < 5;
+  });
+}
+
+//console.log(findShortBook(bookCollection));

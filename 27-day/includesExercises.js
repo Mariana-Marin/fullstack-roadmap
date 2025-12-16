@@ -460,11 +460,31 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.genre.includes("Science Fiction")`
 
+function hasGenre(books, bookTitle, genre) {
+  const foundBook = books.find((book) => {
+    return book.title === bookTitle;
+  });
+
+  return foundBook.genre.includes(genre);
+}
+
+//console.log(hasGenre(bookCollection, "Dune", "Science Fiction"));
+
 // 2. Exercise: Check Keyword
 // Function Name: hasKeyword
 // Instruction: Create a function that checks if a specific book includes the keyword "magic".
 // Example Output: true (for "The Name of the Wind")
 // Hint: `book.keywords.includes("magic")`
+
+function hasKeyword(books, bookTitle, keyword) {
+  const foundBook = books.find((book) => {
+    return book.title === bookTitle;
+  });
+
+  return foundBook.keywords.includes(keyword);
+}
+
+//console.log(hasKeyword(bookCollection,"The Name of the Wind", "magic" ));
 
 // 3. Exercise: Check Title in List
 // Function Name: checkTitleInCollection
@@ -472,11 +492,31 @@ const bookCollection = [
 // Example Output: true
 // Hint: `titles.includes("1984")`
 
+function checkTitleInCollection(books, bookTitle) {
+  return books
+    .map((book) => {
+      return book.title;
+    })
+    .includes(bookTitle);
+}
+
+//console.log(checkTitleInCollection(bookCollection, "1984"));
+
 // 4. Exercise: Check Author
 // Function Name: checkAuthor
 // Instruction: Create an array of all authors. Check if "Jane Austen" is included in that list.
 // Example Output: true
 // Hint: `authors.includes("Jane Austen")`
+
+function checkAuthor(books, bookAuthor) {
+  return books
+    .map((book) => {
+      return book.author;
+    })
+    .includes(bookAuthor);
+}
+
+//console.log(checkAuthor(bookCollection, "Jane Austen"));
 
 // 5. Exercise: Check Publisher Location
 // Function Name: checkPublisherLocation
@@ -484,11 +524,31 @@ const bookCollection = [
 // Example Output: false (most are NY or London)
 // Hint: `locations.includes("Paris")`
 
+function checkPublisherLocation(books, location) {
+  return books
+    .map((book) => {
+      return book.publisher.location;
+    })
+    .includes(location);
+}
+
+//console.log(checkPublisherLocation(bookCollection, "London"));
+
 // 6. Exercise: Check Year
 // Function Name: checkPublicationYear
 // Instruction: Check if the collection contains any book published in 1965. Map years, then check includes.
 // Example Output: true
 // Hint: `years.includes(1965)`
+
+function checkPublicationYear(books, year) {
+  return books
+    .map((book) => {
+      return book.publicationYear;
+    })
+    .includes(year);
+}
+
+//console.log(checkPublicationYear(bookCollection, 1965));
 
 // 7. Exercise: Check Keyword in Summary
 // Function Name: checkWordInSummary
@@ -496,17 +556,41 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.summary.includes("whale")`
 
+function checkWordInSummary(books, bookTitle, word) {
+  return books
+    .find((book) => {
+      return book.title === bookTitle;
+    })
+    .summary.includes(word);
+}
+
+// console.log(checkWordInSummary(bookCollection, "Moby Dick", "whale"));
+
 // 8. Exercise: Check ISBN
 // Function Name: checkISBN
 // Instruction: Check if the ISBN "978-0451524935" exists in the collection. Map ISBNs first.
 // Example Output: true
 // Hint: `isbns.includes("...")`
 
+function checkISBN (books, ISBN){
+
+    return books
+    .map((book) => {
+      return book.isbn;
+    })
+    .includes(ISBN);
+
+}
+
+console.log(checkISBN(bookCollection, "978-0451524935"));
+
 // 9. Exercise: Check Multiple Genres
 // Function Name: hasMultipleGenres
 // Instruction: Check if "The Hobbit" has "Fantasy" AND "Adventure" in its genre list.
 // Example Output: true
 // Hint: `book.genre.includes("Fantasy") && book.genre.includes("Adventure")`
+
+
 
 // 10. Exercise: Check Forbidden Keyword
 // Function Name: hasForbiddenKeyword
