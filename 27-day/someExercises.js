@@ -559,14 +559,39 @@ console.log(hasStephenKing(bookCollection));
 // Example Output: true
 // Hint: `book.chapters === 0`
 
+function hasZeroChapters(books) {
+  return books.some((book) => {
+    return book.chapters === 0;
+  });
+}
+
+console.log(hasZeroChapters(bookCollection));
+
 // 9. Exercise: Any Low Rated Book?
 // Function Name: hasLowRatedBook
 // Instruction: Use .some() to check if there is any book with a "Goodreads" score below 3.5.
 // Example Output: false (lowest is usually around 3.51)
 // Hint: `book.ratings.find(r => r.source === "Goodreads").score < 3.5`
 
+function hasLowRatedBook(books) {
+  
+  return books.some((book) => {
+    return book.ratings.score < 3.5;
+  });
+}
+
+console.log(hasLowRatedBook(bookCollection));
+
 // 10. Exercise: Any Future Book?
 // Function Name: hasFutureBook
 // Instruction: Use .some() to check if there is any book published in the year 2025 or later.
 // Example Output: false
 // Hint: `book.publicationYear >= 2025`
+
+function hasFutureBook(books) {
+  return books.some((book) => {
+    return book.publicationYear >= 2025;
+  });
+}
+
+console.log(hasFutureBook(bookCollection));
