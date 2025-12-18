@@ -572,17 +572,15 @@ function checkWordInSummary(books, bookTitle, word) {
 // Example Output: true
 // Hint: `isbns.includes("...")`
 
-function checkISBN (books, ISBN){
-
-    return books
+function checkISBN(books, ISBN) {
+  return books
     .map((book) => {
       return book.isbn;
     })
     .includes(ISBN);
-
 }
 
-console.log(checkISBN(bookCollection, "978-0451524935"));
+//console.log(checkISBN(bookCollection, "978-0451524935"));
 
 // 9. Exercise: Check Multiple Genres
 // Function Name: hasMultipleGenres
@@ -590,10 +588,25 @@ console.log(checkISBN(bookCollection, "978-0451524935"));
 // Example Output: true
 // Hint: `book.genre.includes("Fantasy") && book.genre.includes("Adventure")`
 
+function hasMultipleGenres(books, bookTitle, genre1, genre2) {
+  const book = books.find((book) => book.title === bookTitle);
+  return book.genre.includes(genre1) && book.genre.includes(genre2);
+}
 
+//console.log(
+hasMultipleGenres(bookCollection, "The Hobbit", "Adventure", "Fantasy");
 
 // 10. Exercise: Check Forbidden Keyword
 // Function Name: hasForbiddenKeyword
 // Instruction: Check if "Pride and Prejudice" does NOT include the keyword "aliens".
 // Example Output: true
 // Hint: `!book.keywords.includes("aliens")`
+
+function hasForbiddenKeyword(books, bookTitle, keyword) {
+  const book = books.find((book) => book.title === bookTitle);
+  return !book.keywords.includes(keyword);
+}
+
+console.log(
+  hasForbiddenKeyword(bookCollection, "Pride and Prejudice", "aliens")
+);

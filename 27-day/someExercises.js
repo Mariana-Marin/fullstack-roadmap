@@ -460,11 +460,27 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.pages > 600`
 
+function hasLongBooks(books) {
+  return books.some((book) => {
+    return book.pages > 600;
+  });
+}
+
+//console.log(hasLongBooks(bookCollection));
+
 // 2. Exercise: Any Old Books?
 // Function Name: hasOldBooks
 // Instruction: Use .some() to check if there is any book published before the year 1900.
 // Example Output: true
 // Hint: `book.publicationYear < 1900`
+
+function hasOldBooks(books) {
+  return books.some((book) => {
+    return book.publicationYear < 1900;
+  });
+}
+
+console.log(hasOldBooks(bookCollection));
 
 // 3. Exercise: Any Horror Books?
 // Function Name: hasHorrorBooks
@@ -472,11 +488,26 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.genre.includes("Horror")`
 
+function hasHorrorBooks(books) {
+  return books.some((book) => {
+    return book.genre.includes("Horror");
+  });
+}
+console.log(hasHorrorBooks(bookCollection));
+
 // 4. Exercise: Any Unavailable Books?
 // Function Name: hasUnavailableBooks
 // Instruction: Use .some() to check if there is any book that is currently NOT available.
 // Example Output: true
 // Hint: `book.isAvailable === false`
+
+function hasUnavailableBooks(books) {
+  return books.some((book) => {
+    return !book.isAvailable;
+  });
+}
+
+console.log(hasUnavailableBooks(bookCollection));
 
 // 5. Exercise: Any Perfect Ratings?
 // Function Name: hasPerfectRating
@@ -484,17 +515,43 @@ const bookCollection = [
 // Example Output: false (highest is usually 4.9)
 // Hint: `book.ratings.some(r => r.score === 5.0)`
 
+function hasPerfectRating(books) {
+  return books.some((book) =>
+    book.ratings.some((r) => {
+      return r.score === 5;
+    })
+  );
+}
+console.log(hasPerfectRating(bookCollection));
+
 // 6. Exercise: Any Book with "Magic"?
 // Function Name: hasMagicKeyword
 // Instruction: Use .some() to check if any book includes the keyword "magic".
 // Example Output: true
 // Hint: `book.keywords.includes("magic")`
 
+function hasMagicKeyword(books) {
+  return books.some((book) => {
+    return book.keywords.includes("magic");
+  });
+}
+
+console.log(hasMagicKeyword(bookCollection));
+
 // 7. Exercise: Any Book by Stephen King?
 // Function Name: hasStephenKing
 // Instruction: Use .some() to check if there is any book written by "Stephen King".
 // Example Output: false
 // Hint: `book.author === "Stephen King"`
+
+function hasStephenKing(books) {
+  
+  return books.some((book) => {
+    return book.author.includes("Stephen King");
+  });
+}
+
+console.log(hasStephenKing(bookCollection));
 
 // 8. Exercise: Any Book with 0 Chapters?
 // Function Name: hasZeroChapters
