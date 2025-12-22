@@ -1,3 +1,4 @@
+
 function reverseWithForEach(text) {
   const characters = text.split("");
   let reversedText = "";
@@ -26,7 +27,7 @@ function diffStrings(str1, str2) {
   let out2 = "";
   const chars1 = str1.split("");
   const chars2 = str2.split("");
-  
+
   chars1.forEach((char) => {
     if (!chars2.includes(char)) {
       out1 += char;
