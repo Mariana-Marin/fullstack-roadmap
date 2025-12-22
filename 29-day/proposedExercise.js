@@ -73,4 +73,4 @@ function multiplyArray(n, array) {
   });
 }
 
-console.log(multiplyArray(3, [1, 2, 3]));
+console.log(multiplyArray(3, [1, 2, 3])); 
