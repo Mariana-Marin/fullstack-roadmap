@@ -42,6 +42,8 @@ if (nombre === 'jorge') {
 
 const color = "azul";
 
+if (color === "azul") console.log("positivo");
+
 
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
@@ -59,7 +61,9 @@ const color = "azul";
 
 let numero = 30;
 
+if (numero > 20) numero *= 2
 
+console.log(numero);
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
 // ************************************************** EJERCICIO - FIN **************************************************
@@ -75,6 +79,9 @@ let numero = 30;
 
 const comida = "frijoles";
 
+if (comida !== "sancocho") {
+    console.log(comida);
+}
 
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------

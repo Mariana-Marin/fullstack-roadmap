@@ -1,6 +1,6 @@
-/** 
+/**
  *  A veces nos toca crear condicionales que evaluan mas de 1 condicion y para eso usaremos los operadores "||" y "&&"
- * 
+ *
  *  el operador "||" nos permite evaluar si al menos una de las dos condiciones se cumple. a continuacion vamos a revisar
  *  unos ejemplos.
  */
@@ -14,12 +14,12 @@ const marca = "samsung";
  */
 
 // crearemos nuestro condicional para ejecutar lo que nos acaban de pedir y para eso usaremos el operador ||
-if (marca === 'samsung' || marca === 'apple') {
-    // el condicional anterior nos permite revisar si alguna de las dos condiciones se cumple.
-    console.log('es un equipo con garantia');
+if (marca === "samsung" || marca === "apple") {
+  // el condicional anterior nos permite revisar si alguna de las dos condiciones se cumple.
+  console.log("es un equipo con garantia");
 }
 
-/** 
+/**
  *  ahora revisemos el operado "&&", este nos permite revisar que dos condiciones se cumplan de manera conjunta,
  *  si una de las condiciones no se cumple el bloque de codigo del "if" no se va a llevar a cabo.
  */
@@ -29,15 +29,14 @@ if (marca === 'samsung' || marca === 'apple') {
  */
 
 // usaremos el operador "&&" para revisar que se cumplan las dos condiciones.
-if (marca === "samsung" && equipo === 'celular') {
-    console.log("es un celular de samsung");
+if (marca === "samsung" && equipo === "celular") {
+  console.log("es un celular de samsung");
 }
 
 /**
  *  si ejecutamos todo el codigo vamos a observar que no vamos a ver en la consola la frase "es un celular de samsung"
  *  debido a que unos de los condicionales no se cumple.
  */
-
 
 // ************************************************** EJERCICIO - INICIO **************************************************
 
@@ -51,18 +50,17 @@ if (marca === "samsung" && equipo === 'celular') {
 const mes = "febrero";
 const dia = 30;
 
+if (mes === "febrero" && dia === 30) console.log("es imposible");
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
 // ************************************************** EJERCICIO - FIN **************************************************
-
-
 
 // ************************************************** EJERCICIO - INICIO **************************************************
 
 /**
  *  1.  tenemos dos variables "grupo1" y "grupo2" imprime: "ambos grupos son del cesde" solo si los grupos tienen los valores
- *      "throwers" y "catchers" 
- * 
+ *      "throwers" y "catchers"
+ *
  *      ten cuidado que cualquiera de las dos variables puede tener cualquiera de los dos valores
  */
 
@@ -71,9 +69,11 @@ const dia = 30;
 const grupo1 = "throwers";
 const grupo2 = "catchers";
 
-
-
-
+if (
+  (grupo1 === "throwers" && grupo2 === "catchers") ||
+  (grupo2 === "throwers" && grupo1 === "catchers")
+)
+  console.log("ambos son del CESDE");
 
 // -------------------------------------------------- FINAL DE TU CODIGO --------------------------------------------------
 // ************************************************** EJERCICIO - FIN **************************************************
