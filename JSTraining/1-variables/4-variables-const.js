@@ -11,7 +11,7 @@
  */
 
 // declaramos una variable usando "const" sin un valor inicial
-const miNumero;
+//const miNumero;
 
 
 /**
