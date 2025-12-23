@@ -133,20 +133,13 @@ console.log(frase);
     "yo se que ustedes pueden con este ejercicio ustedes son unos cracks!";
 
   let fraseInvertida = "";
-  let espaciosEnBlanco = 0;
+  let contador = 1
 
   frase.split("").forEach((char) => {
     fraseInvertida = char + fraseInvertida;
-    if (char === " ") {
-      espaciosEnBlanco++;
-    }
   });
 
-  let fraseFinal = fraseInvertida;
-
-  for (let index = 1; index <= espaciosEnBlanco; index++) {
-    fraseFinal = fraseFinal.replace(" ", index);
-  }
+  let fraseFinal = fraseInvertida.replaceAll(" ", () => contador++)
 
   console.log(fraseFinal);
 }
