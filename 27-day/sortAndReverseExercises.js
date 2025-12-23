@@ -525,7 +525,7 @@ console.log(sortByPages(bookCollection));
 // Hint: `bookCollection.reverse()`
 
 function reverseCollection(books) {
-  return [...books].reverse()
+  return [...books].reverse();
 }
 
 console.log(reverseCollection(bookCollection));
@@ -536,9 +536,11 @@ console.log(reverseCollection(bookCollection));
 // Example Output: [ { author: "Carl Sagan", ... }, { author: "Cormac McCarthy", ... }, ... ]
 // Hint: `(a, b) => a.author.localeCompare(b.author)`
 
-function name(params) {
-  
+function sortByAuthor(books) {
+  return [...books].sort((a, b) => a.author.localeCompare(b.author));
 }
+
+console.log(sortByAuthor(bookCollection));
 
 // 8. Exercise: Sort by Rating (Goodreads)
 // Function Name: sortByRating
@@ -549,14 +551,36 @@ function name(params) {
 // `const scoreB = b.ratings.find(r => r.source === "Goodreads").score;`
 // `return scoreB - scoreA;`
 
+function sortByRating(books) {
+  return [...books].sort((a, b) => {
+    const scoreA = a.ratings.find(r => r.source === "Goodreads").score;
+    const scoreB = b.ratings.find(r => r.source === "Goodreads").score;
+    return scoreB - scoreA
+  });
+}
+
+console.log(sortByRating(bookCollection));
+
 // 9. Exercise: Sort by Chapter Count
 // Function Name: sortByChapters
 // Instruction: Use .sort() to order the books by the number of chapters, from most to least.
 // Example Output: [ { title: "Moby Dick", chapters: 135, ... }, ... ]
 // Hint: `(a, b) => b.chapters - a.chapters`
 
+function sortByChapters(books) {
+  return [...books].sort((a, b) => b.chapters - a.chapters);
+}
+
+console.log(sortByChapters(bookCollection));
+
 // 10. Exercise: Sort by Keyword Count
 // Function Name: sortByKeywordCount
 // Instruction: Use .sort() to order the books by how many keywords they have, from fewest to most.
 // Example Output: [ { title: "Sapiens...", keywords: [...4 items], ... }, ... ]
 // Hint: `(a, b) => a.keywords.length - b.keywords.length`
+
+function sortByKeywordCount(books) {
+  return [...books].sort((a, b) => a.keywords.length - b.keywords.length);
+}
+
+console.log(sortByKeywordCount(bookCollection));

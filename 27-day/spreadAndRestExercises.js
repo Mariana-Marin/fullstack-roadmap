@@ -460,6 +460,13 @@ const bookCollection = [
 // Example Output: A new array identical to the original.
 // Hint: `const newArray = [...bookCollection]`
 
+function cloneCollection(collection) {
+  const newCollection = [...collection];
+  return newCollection;
+}
+
+console.log(cloneCollection(bookCollection));
+
 // 2. Exercise: Merge Arrays
 // Function Name: mergeBookArrays
 // Instruction: Create a new array containing all books from `bookCollection` plus a new dummy book object. Use spread to combine them.
@@ -513,3 +520,4 @@ const bookCollection = [
 // Instruction: Create a function that takes a partial book object (e.g., just title and author). Merge it with a `defaultSettings` object (e.g., { isAvailable: true, chapters: 10 }) using spread, so the passed values override defaults if present.
 // Example Output: { isAvailable: true, chapters: 10, title: "My Book", author: "Me" }
 // Hint: `return { ...defaultSettings, ...userBook }`
+
