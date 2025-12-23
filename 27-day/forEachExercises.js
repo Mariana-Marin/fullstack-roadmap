@@ -657,7 +657,6 @@ function getHighRatedBooks(collection) {
   const arrBooksHighRated = [];
 
   collection.forEach((book) => {
-
     const isHighRating = book.ratings.some((rating) => rating.score > 4.8);
 
     if (isHighRating) {
@@ -668,4 +667,7 @@ function getHighRatedBooks(collection) {
   return arrBooksHighRated;
 }
 
-// console.log(getHighRatedBooks(bookCollection));
+console.log(getHighRatedBooks(bookCollection));
+
+
+

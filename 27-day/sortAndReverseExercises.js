@@ -454,7 +454,7 @@ const bookCollection = [
 // SORT AND REVERSE EXERCISES
 // -----------------------------------------------------------------------------
 
-// Note: .sort() and .reverse() MUTATE the original array. 
+// Note: .sort() and .reverse() MUTATE the original array.
 // If you want to keep the original order, use .slice() or [...array] to make a copy first.
 // Example: const sortedBooks = [...bookCollection].sort(...)
 
@@ -464,11 +464,23 @@ const bookCollection = [
 // Example Output: [ { title: "Pride and Prejudice", publicationYear: 1813, ... }, ... ]
 // Hint: `(a, b) => a.publicationYear - b.publicationYear`
 
+function sortByYearAsc(books) {
+  return [...books].sort((a, b) => a.publicationYear - b.publicationYear);
+}
+
+console.log(sortByYearAsc(bookCollection));
+
 // 2. Exercise: Sort by Year (Descending)
 // Function Name: sortByYearDesc
 // Instruction: Use .sort() to order the books by publication year, from newest to oldest.
 // Example Output: [ { title: "Sapiens...", publicationYear: 2011, ... }, ... ]
 // Hint: `(a, b) => b.publicationYear - a.publicationYear`
+
+function sortByYearDesc(books) {
+  return [...books].sort((a, b) => b.publicationYear - a.publicationYear);
+}
+
+console.log(sortByYearDesc(bookCollection));
 
 // 3. Exercise: Sort by Title (A-Z)
 // Function Name: sortByTitleAsc
@@ -476,11 +488,23 @@ const bookCollection = [
 // Example Output: [ { title: "1984", ... }, { title: "A Brief History of Time", ... }, ... ]
 // Hint: `(a, b) => a.title.localeCompare(b.title)`
 
+function sortByTitleAsc(books) {
+  return [...books].sort((a, b) => a.title.localeCompare(b.title));
+}
+
+console.log(sortByTitleAsc(bookCollection));
+
 // 4. Exercise: Sort by Title (Z-A)
 // Function Name: sortByTitleDesc
 // Instruction: Use .sort() to order the books reverse-alphabetically by title.
 // Example Output: [ { title: "Where the Sidewalk Ends", ... }, ... ]
 // Hint: `(a, b) => b.title.localeCompare(a.title)`
+
+function sortByTitleDesc(books) {
+  return [...books].sort((a, b) => b.title.localeCompare(a.title));
+}
+
+console.log(sortByTitleDesc(bookCollection));
 
 // 5. Exercise: Sort by Page Count
 // Function Name: sortByPages
@@ -488,11 +512,23 @@ const bookCollection = [
 // Example Output: [ { title: "Fahrenheit 451", pages: 158, ... }, ... ]
 // Hint: `(a, b) => a.pages - b.pages`
 
+function sortByPages(books) {
+  return [...books].sort((a, b) => a.pages - b.pages);
+}
+
+console.log(sortByPages(bookCollection));
+
 // 6. Exercise: Reverse Collection
 // Function Name: reverseCollection
 // Instruction: Use .reverse() to reverse the order of the entire book collection.
 // Example Output: [ { title: "Fahrenheit 451", ... }, { title: "Frankenstein", ... }, ... ] (Assuming original order)
 // Hint: `bookCollection.reverse()`
+
+function reverseCollection(books) {
+  return [...books].reverse();
+}
+
+console.log(reverseCollection(bookCollection));
 
 // 7. Exercise: Sort by Author Name
 // Function Name: sortByAuthor
@@ -500,14 +536,30 @@ const bookCollection = [
 // Example Output: [ { author: "Carl Sagan", ... }, { author: "Cormac McCarthy", ... }, ... ]
 // Hint: `(a, b) => a.author.localeCompare(b.author)`
 
+function sortByAuthor(books) {
+  return [...books].sort((a, b) => a.author.localeCompare(b.author));
+}
+
+console.log(sortByAuthor(bookCollection));
+
 // 8. Exercise: Sort by Rating (Goodreads)
 // Function Name: sortByRating
 // Instruction: Use .sort() to order the books by their Goodreads rating, from highest to lowest.
 // Example Output: [ { title: "The Name of the Wind", score: 4.55, ... }, ... ]
-// Hint: You need to find the Goodreads score inside the sort function: 
+// Hint: You need to find the Goodreads score inside the sort function:
 // `const scoreA = a.ratings.find(r => r.source === "Goodreads").score;`
 // `const scoreB = b.ratings.find(r => r.source === "Goodreads").score;`
 // `return scoreB - scoreA;`
+
+function sortByRating(books) {
+  return [...books].sort((a, b) => {
+    const scoreA = a.ratings.find(r => r.source === "Goodreads").score;
+    const scoreB = b.ratings.find(r => r.source === "Goodreads").score;
+    return scoreB - scoreA
+  });
+}
+
+console.log(sortByRating(bookCollection));
 
 // 9. Exercise: Sort by Chapter Count
 // Function Name: sortByChapters
@@ -515,8 +567,20 @@ const bookCollection = [
 // Example Output: [ { title: "Moby Dick", chapters: 135, ... }, ... ]
 // Hint: `(a, b) => b.chapters - a.chapters`
 
+function sortByChapters(books) {
+  return [...books].sort((a, b) => b.chapters - a.chapters);
+}
+
+console.log(sortByChapters(bookCollection));
+
 // 10. Exercise: Sort by Keyword Count
 // Function Name: sortByKeywordCount
 // Instruction: Use .sort() to order the books by how many keywords they have, from fewest to most.
 // Example Output: [ { title: "Sapiens...", keywords: [...4 items], ... }, ... ]
 // Hint: `(a, b) => a.keywords.length - b.keywords.length`
+
+function sortByKeywordCount(books) {
+  return [...books].sort((a, b) => a.keywords.length - b.keywords.length);
+}
+
+console.log(sortByKeywordCount(bookCollection));

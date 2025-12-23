@@ -13,3 +13,4 @@ function findTriangleArea(a, b, c) {
 }
 
 findTriangleArea(5, 6, 7);
+

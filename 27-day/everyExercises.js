@@ -460,11 +460,23 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.title` (checks if it's truthy)
 
+function allHaveTitles(books) {
+  return books.every((book) => book.title);
+}
+
+console.log(allHaveTitles(bookCollection));
+
 // 2. Exercise: All Have Pages?
 // Function Name: allHavePages
 // Instruction: Use .every() to check if every book has more than 0 pages.
 // Example Output: true
 // Hint: `book.pages > 0`
+
+function allHavePages(books) {
+  return books.every((book) => book.pages > 0);
+}
+
+console.log(allHavePages(bookCollection));
 
 // 3. Exercise: All Available?
 // Function Name: allAreAvailable
@@ -472,11 +484,25 @@ const bookCollection = [
 // Example Output: false (some are not available)
 // Hint: `book.isAvailable === true`
 
+function allAreAvailable(books) {
+  return books.every((book) => book.isAvailable);
+}
+
+console.log(allAreAvailable(bookCollection));
+
 // 4. Exercise: All Post-1800?
 // Function Name: allPost1800
 // Instruction: Use .every() to check if every book was published after the year 1800.
 // Example Output: true
 // Hint: `book.publicationYear > 1800`
+
+
+function allPost1800(books) {
+  return books.every((book) => book.publicationYear > 1800);
+}
+
+console.log(allPost1800(bookCollection));
+
 
 // 5. Exercise: All Have Ratings?
 // Function Name: allHaveRatings
@@ -484,11 +510,23 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.ratings.length > 0`
 
+function allHaveRatings(books) {
+  return books.every((book) => book.ratings.length > 0);
+}
+
+console.log(allHaveRatings(bookCollection));
+
 // 6. Exercise: All Have Genres?
 // Function Name: allHaveGenres
 // Instruction: Use .every() to check if every book has at least one genre listed.
 // Example Output: true
 // Hint: `book.genre.length > 0`
+
+function allHaveGenres(books) {
+  return books.every((book) => book.genre.length > 0);
+}
+
+console.log(allHaveGenres(bookCollection));
 
 // 7. Exercise: All Have Summaries?
 // Function Name: allHaveSummaries
@@ -496,11 +534,23 @@ const bookCollection = [
 // Example Output: true
 // Hint: `typeof book.summary === 'string'`
 
+function allHaveSummaries(books) {
+  return books.every((book) => typeof book.summary === "string");
+}
+
+console.log(allHaveSummaries(bookCollection));
+
 // 8. Exercise: All By Frank Herbert?
 // Function Name: allByFrankHerbert
 // Instruction: Use .every() to check if every book is written by "Frank Herbert".
 // Example Output: false
 // Hint: `book.author === "Frank Herbert"`
+
+function allByFrankHerbert(books) {
+  return books.every((book) => book.author === "Frank Herbert");
+}
+
+console.log(allByFrankHerbert(bookCollection));
 
 // 9. Exercise: All Have ISBN?
 // Function Name: allHaveISBN
@@ -508,8 +558,22 @@ const bookCollection = [
 // Example Output: true
 // Hint: `book.isbn`
 
+function allHaveISBN(books) {
+  return books.every((book) => book.isbn);
+}
+
+console.log(allHaveISBN(bookCollection));
+
 // 10. Exercise: All Rated > 3.0?
 // Function Name: allRatedAbove3
 // Instruction: Use .every() to check if every book has a "Goodreads" rating above 3.0.
 // Example Output: true
-// Hint: `book.ratings.find(r => r.source === "Goodreads").score > 3.0`
+
+
+function allRatedAbove3(books) {
+  return books.every((book) => book.ratings.find(r => r.source === "Goodreads").score > 3);
+}
+
+console.log(allRatedAbove3(bookCollection));
+
+
