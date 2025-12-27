@@ -47,7 +47,9 @@ function userRiskByAge(inputFullName) {
     );
     if (user) {
       const age = user.age;
-      if (!age) return "usuario con edad desconocida";
+      if (!age || typeof age !== "number" || age < 0)
+        return "usuario con edad desconocida";
+
       if (age > 60) return "alto";
       if (age >= 40) return "medio";
       return "bajo";
@@ -78,6 +80,7 @@ console.log(userRiskByAge(""));
 //     }
 
 function userLastAppointment(userIdentifier) {
+
   if (!userIdentifier || typeof userIdentifier !== "string")
     return "usuario no existe";
 
@@ -90,29 +93,33 @@ function userLastAppointment(userIdentifier) {
         u.firstName.toLowerCase() + " " + u.lastName.toLowerCase() ===
           userIdentifier)
   );
-  
+
   if (!user) return "usuario no existe";
 
-  const userMedicalHistory = medicalHistory.find(
+  const userMedicalHistory = medicalHistory.filter(
     (record) => record.userId === user.userId
   );
 
-  if (!userMedicalHistory) return "sin historial medico";
+  if (!userMedicalHistory.length) return "sin historial medico";
+
+  const lastAppointmentDate = [...userMedicalHistory].sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  )[0];
 
   return {
     userId: user.userId,
     fullName: user.firstName + " " + user.lastName,
-    serviceId: userMedicalHistory.serviceId,
-    speciality: userMedicalHistory.speciality,
-    hospitalName: userMedicalHistory.hospitalName,
-    medicalNotes: userMedicalHistory.medicalNotes,
-    medicationsUsed: userMedicalHistory.medicationsUsed,
-    date: userMedicalHistory.date.toString().slice(0, 10),
-  };
+    serviceId: lastAppointmentDate.serviceId || "Servicio no especificado",
+    speciality: lastAppointmentDate.speciality || "Especialidad no especificada",
+    hospitalName: lastAppointmentDate.hospitalName || "Hospital no especificado",
+    medicalNotes: lastAppointmentDate.medicalNotes || "Sin notas medicas",
+    medicationsUsed: lastAppointmentDate.medicationsUsed.length
+      ? lastAppointmentDate.medicationsUsed.join(", ")
+      : "Ninguna medicacion",
+    date:
+      lastAppointmentDate.date.toString().slice(0, 10) || "Fecha no especificada",
+  } || "sin historial medico";
 }
 
-console.log(userLastAppointment("usr_001"));
-console.log(userLastAppointment("Andrés Gómez"));
-console.log(userLastAppointment("andrés gómez"));
-console.log(userLastAppointment("ANDRÉS GÓMEZ"));
-console.log(userLastAppointment(""));
+console.log(userLastAppointment("usr_077"));
+console.log(userLastAppointment("usr_168"));
