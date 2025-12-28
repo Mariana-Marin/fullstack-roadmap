@@ -8,7 +8,7 @@ console.log("Hello World"); // imprime un mensaje en consola
 // variables y constantes
 var myVar = "Hello"; // variable (no recomendable en TS)
 let age = 30;
-const name = "Mariana";
+//const name = "Mariana";
 age = 31;
 // name = "Carlos"; Error: no se puede reasignar una constante
 
@@ -21,6 +21,14 @@ const undefinedValue: undefined = undefined; // undefined
 
 // estructuras de datos
 const languages: string[] = ["JavaScript", "TypeScript", "Python"]; // array de strings
+const languages2 : Array<string> = ["Java", "C#", "Ruby"]; // otra sintaxis para array de strings
+const mixedArray: (string | number)[] = ["Hello", 42, "World", 100]; // array mixto
+const emptyArray: any[] = []; // array vacio
+const nestedArray: number[][] = [[1, 2], [3, 4]]; // array anidado
+const objectArray: Array<{ id: number; name: string }> = [
+  { id: 1, name: "Item 1" },
+  { id: 2, name: "Item 2" },
+]; // array de objetos
 const scores: Array<number> = [95, 85, 76]; // array de numeros
 const person: { name: string; age: number } = { name: "Mariana", age: 31 }; // objeto
 const user: { id: string; email: string } = {
