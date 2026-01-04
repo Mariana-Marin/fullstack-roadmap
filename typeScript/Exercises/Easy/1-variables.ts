@@ -347,7 +347,7 @@ const matriz: number[][] = [
     - abierto (boolean)
 */
 
-
+const restaurante :  
 
 
 /*
