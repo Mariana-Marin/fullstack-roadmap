@@ -27,12 +27,10 @@ function getIrregularDoctors() {
   const result = [];
 
   for (const doctor in doctorsMap) {
-    const specialties = doctorsMap[doctor];
-
-    if (specialties.size > 4) {
+    if (doctorsMap[doctor].size > 4) {
       result.push({
         doctor: doctor,
-        specialties: [...specialties], // Convertir Set a Array o Array.from(specialties)
+        specialties: [...doctorsMap[doctor]], // Convertir Set a Array o Array.from(specialties)
       });
     }
   }

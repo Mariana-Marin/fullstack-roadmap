@@ -9,17 +9,16 @@ const medicalHistory = require("../data/medical_history.json");
 const { findById } = require("../repositories");
 
 function hospitalUsers(inputHospitalName) {
-  if (!inputHospitalName || typeof inputHospitalName !== "string") return "hospital no existe";
+  if (!inputHospitalName || typeof inputHospitalName !== "string")
+    return "hospital no existe";
 
   const hospitalsSet = new Set();
 
   medicalHistory.forEach((record) => {
     if (record.hospitalName.toLowerCase() === inputHospitalName.toLowerCase()) {
       const user = findById(record.userId);
-      if (user) {
-        const fullName = `${user.firstName} ${user.lastName}`;
-        hospitalsSet.add(fullName);
-      }
+      const fullName = `${user.firstName} ${user.lastName}`;
+      hospitalsSet.add(fullName);
     }
   });
 

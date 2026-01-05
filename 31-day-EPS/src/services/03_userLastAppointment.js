@@ -14,22 +14,14 @@
 //     }
 
 const medicalHistory = require("../data/medical_history.json");
-const userDataBase = require('../data/user-database.json');
+const { findByIdOrName } = require("../repositories");
 
 function userLastAppointment(userIdentifier) {
 
   if (!userIdentifier || typeof userIdentifier !== "string")
     return "usuario no existe";
 
-  userIdentifier = userIdentifier.trim().toLowerCase();
-
-  const user = userDataBase.find(
-    (u) =>
-      u.userId === userIdentifier ||
-      (userIdentifier.split(" ").length === 2 &&
-        u.firstName.toLowerCase() + " " + u.lastName.toLowerCase() ===
-          userIdentifier)
-  );
+  const user = findByIdOrName(userIdentifier);
 
   if (!user) return "usuario no existe";
 

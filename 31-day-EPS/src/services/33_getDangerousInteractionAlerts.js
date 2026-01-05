@@ -12,3 +12,49 @@
 // debemos obtener el nombre los hospitales donde sucedio esto y ademas el nombre de los 
 // usuarios para poder contactarlos y llegar a una conciliacion con ellos antes de que se 
 // sumen a esta demanda.
+
+
+const medicalHistory = require("../data/medical_history.json");
+const { findByIdOrName } = require("../repositories");
+
+function getDangerousInteractionAlerts() {
+
+  const nsaids = [
+    "meloxicam", 
+    "ibuprofeno", 
+    "naproxeno", 
+    "diclofenaco", 
+    "aspirina", 
+    "ketorolaco"
+  ];
+  
+  const anticoagulant = "warfarina";
+
+  const alerts = [];
+
+  medicalHistory.forEach((record) => {
+
+    const meds = record.medicationsUsed.map(m => m ? m.toLowerCase() : "");
+
+    const hasWarfarin = meds.includes(anticoagulant);
+
+    const hasNSAID = meds.some(med => nsaids.includes(med));
+
+    if (hasWarfarin && hasNSAID) {
+      const user = findByIdOrName(record.userId);
+      
+      alerts.push({
+        doctor: record.doctor,
+        hospital: record.hospitalName, 
+        patientName: user ? `${user.firstName} ${user.lastName}` : "Desconocido",
+        contactEmail: user ? user.email : "No disponible", 
+        date: record.date,
+        medications: record.medicationsUsed
+      });
+    }
+  });
+
+  return alerts;
+}
+
+console.log(JSON.stringify(getDangerousInteractionAlerts(), null, 2));
