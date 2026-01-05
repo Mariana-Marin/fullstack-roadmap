@@ -6,6 +6,7 @@
 // atendido como a los hospitales en los que estuvo para poder realizar nuestro respectivo informe.
 
 const medicalHistory = require("../data/medical_history.json");
+const userDataBase = require("../data/user-database.json");
 
 function getImpostorDoctorRecords() {
   const hospitals = new Set();
@@ -15,14 +16,21 @@ function getImpostorDoctorRecords() {
     return record.doctor === "Dr. Alberto Martínez";
   });
 
-  filterRecord.forEach((record) => {
+  filterRecords.forEach((record) => {
     hospitals.add(record.hospitalName);
     patients.add(record.userId)
   });
 
+  const result = {
+    hospitals : [...hospitals],
+    patients : [...patients].map((userId) => {
+      const user = userDataBase.find((u) => u.userId === userId);
+      return user ? `${user.firstName} ${user.lastName}` : "Usuario no encontrado";
+    })
+  }
 
-  
-  return filterRecords;
+
+  return result;
 }
 
 console.log(getImpostorDoctorRecords());

@@ -1,5 +1,3 @@
-const medicalHistory = require("../data/medical_history.json");
-const userDataBase = require("../data/user-database.json");
 const { USER_NOT_FOUND, UNKNOWN_AGE } = require("../constants/error-messages");
 const { findByIdOrName } = require("../repositories");
 
