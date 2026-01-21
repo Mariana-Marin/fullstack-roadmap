@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 
-console.log(req.query);
 // Ruta por defecto
 app.get("/calc", (req, res) => {
   res.json({mensaje: "Bienvenido a la Calculadora API. Usa /calc/sumar, /calc/restar, /calc/multiplicar o /calc/dividir con parámetros a y b."});
