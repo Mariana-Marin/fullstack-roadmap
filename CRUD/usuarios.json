@@ -1,0 +1,18 @@
+[
+  {
+    "id": "30db9ba6-dd13-4ab2-a776-c2402f697778",
+    "nombre": "Juan",
+    "apellido": "Gomez",
+    "ciudad": "Medellín",
+    "edad": 30,
+    "correo": "juan@example.com"
+  },
+  {
+    "id": "c48bd8b1-ebf4-4aea-b677-3bdd691d4ed3",
+    "nombre": "Ana",
+    "apellido": "Lopez",
+    "ciudad": "Bogotá",
+    "edad": 25,
+    "correo": "ana@example.com"
+  }
+]
